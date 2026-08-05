@@ -1,0 +1,25 @@
+# EchoEar Pro Module 4B.3B Captive Portal simulator
+
+# auto = enabled only when SoftAP DNS + HTTP portal are ready
+portal_enabled=auto
+
+portal_state=ready
+portal_page=wifi_list
+portal_error=none
+
+portal_redirect_enabled=1
+portal_title=EchoEar Setup
+portal_locale=th-TH
+portal_url=http://192.168.4.1/
+portal_route=/
+
+portal_scan_requested=0
+portal_selected_ssid=
+portal_selected_network_secured=1
+
+# Simulator uses an internal dummy value only when this is 1.
+# Never store a real Wi-Fi password in this file.
+portal_password_present=0
+portal_connect_requested=0
+
+portal_status=Select a Wi-Fi network

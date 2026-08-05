@@ -157,9 +157,11 @@ target_sources(main PRIVATE
     ../src/echoear_app_state.c
     ../src/echoear_first_boot.c
     ../src/echoear_softap.c
+    ../src/echoear_captive_portal.c
     ../src/echoear_provisioning.c
     src/echoear_first_boot_mock.c
     src/echoear_softap_mock.c
+    src/echoear_captive_portal_mock.c
     ../src/echoear_provisioning_mock.c
     ../src/echoear_mock_api.c
 )
