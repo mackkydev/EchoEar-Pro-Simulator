@@ -1,0 +1,13 @@
+﻿# EchoEar Pro Module 4B provisioning simulator
+
+provisioning_enabled=0
+provisioning_state=not_started
+provisioning_error=none
+
+setup_completed=1
+client_connected=0
+
+ap_ssid=
+target_ssid=Home-WiFi
+ip_address=192.168.1.120
+wifi_rssi=-48

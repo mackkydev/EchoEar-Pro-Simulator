@@ -1,0 +1,16 @@
+face=auto
+car_mode=1
+scenario=driving_gps
+availability=online
+vehicle_status=DRIVING
+battery_percent=73
+range_km=425
+speed_kph=83.4
+speed_source=phone_gps
+plugged_in=0
+charging=0
+charge_power_kw=0
+charge_limit_percent=80
+locked=1
+doors_open=0
+cabin_temp_c=24.5

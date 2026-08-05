@@ -1,0 +1,16 @@
+face=auto
+car_mode=1
+scenario=door_open
+availability=online
+vehicle_status=DOOR OPEN
+battery_percent=76
+range_km=438
+speed_kph=0
+speed_source=unavailable
+plugged_in=0
+charging=0
+charge_power_kw=0
+charge_limit_percent=80
+locked=0
+doors_open=1
+cabin_temp_c=31.5

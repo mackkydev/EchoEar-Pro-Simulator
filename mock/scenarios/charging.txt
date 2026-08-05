@@ -1,0 +1,16 @@
+face=auto
+car_mode=1
+scenario=charging
+availability=online
+vehicle_status=CHARGING
+battery_percent=42
+range_km=238
+speed_kph=0
+speed_source=unavailable
+plugged_in=1
+charging=1
+charge_power_kw=11.0
+charge_limit_percent=80
+locked=1
+doors_open=0
+cabin_temp_c=30.0

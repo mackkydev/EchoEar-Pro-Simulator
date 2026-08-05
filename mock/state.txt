@@ -1,0 +1,13 @@
+face=auto
+car_mode=1
+scenario=driving_gps
+availability=online
+vehicle_status=PARKED
+battery_percent=76
+range_km=438
+speed_kph=0
+speed_source=none
+plugged_in=0
+charging=0
+locked=0
+doors_open=1

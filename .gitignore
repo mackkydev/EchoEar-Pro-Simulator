@@ -10,3 +10,10 @@ bin/
 
 # MacOS file
 .DS_Store
+
+# EchoEar generated and local files
+.vs/
+assets/
+assets-old-*/
+src/main copy.c
+src/old-main.c

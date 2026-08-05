@@ -1,0 +1,16 @@
+face=auto
+car_mode=1
+scenario=parked
+availability=online
+vehicle_status=VEHICLE READY
+battery_percent=76
+range_km=438
+speed_kph=0
+speed_source=unavailable
+plugged_in=0
+charging=0
+charge_power_kw=0
+charge_limit_percent=80
+locked=1
+doors_open=0
+cabin_temp_c=31.5

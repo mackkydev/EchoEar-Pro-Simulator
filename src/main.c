@@ -1,97 +1,106 @@
-/**
- * @file main.c
- *
- */
-
-/*********************
- *      INCLUDES
- *********************/
-
 #ifndef _DEFAULT_SOURCE
-  #define _DEFAULT_SOURCE /* needed for usleep() */
+#define _DEFAULT_SOURCE
 #endif
 
 #include <stdlib.h>
 #include <stdio.h>
-#ifdef _MSC_VER
-  #include <Windows.h>
-#else
-  #include <unistd.h>
-  #include <pthread.h>
-#endif
-#include "lvgl/lvgl.h"
-#include "lvgl/examples/lv_examples.h"
-#include "lvgl/demos/lv_demos.h"
-#include <SDL.h>
 
+#ifdef _MSC_VER
+#include <Windows.h>
+#else
+#include <unistd.h>
+#endif
+
+#include "lvgl/lvgl.h"
+#include <SDL.h>
 #include "hal/hal.h"
 
-/*********************
- *      DEFINES
- *********************/
-
-/**********************
- *      TYPEDEFS
- **********************/
-
-/**********************
- *  STATIC PROTOTYPES
- **********************/
-
-/**********************
- *  STATIC VARIABLES
- **********************/
-
-/**********************
- *      MACROS
- **********************/
-
-/**********************
- *   GLOBAL FUNCTIONS
- **********************/
+#include "echoear_pro_ui.h"
+#include "echoear_app_state.h"
+#include "echoear_mock_api.h"
+#include "echoear_provisioning.h"
+#include "echoear_provisioning_mock.h"
 
 #if LV_USE_OS != LV_OS_FREERTOS
 
 int main(int argc, char **argv)
 {
-  (void)argc; /*Unused*/
-  (void)argv; /*Unused*/
+    (void)argc;
+    (void)argv;
 
-  /*Initialize LVGL*/
-  lv_init();
+    lv_init();
 
-  /*Initialize the HAL (display, input devices, tick) for LVGL*/
-  sdl_hal_init(320, 480);
+    /* Circular preview 360x360 */
+    sdl_hal_init(360, 360);
 
-  /* Run the default demo */
-  /* To try a different demo or example, replace this with one of: */
-  /* - lv_demo_benchmark(); */
-  /* - lv_demo_stress(); */
-  /* - lv_example_label_1(); */
-  /* - etc. */
-  lv_demo_widgets();
+    echoear_app_state_init();
+    echoear_provisioning_init();
+    echoear_pro_ui_create();
 
-  while(1) {
-    /* Periodically call the lv_task handler.
-     * It could be done in a timer interrupt or an OS task too.*/
-    uint32_t sleep_time_ms = lv_timer_handler();
-    if(sleep_time_ms == LV_NO_TIMER_READY){
-	sleep_time_ms =  LV_DEF_REFR_PERIOD;
-    }
+    echoear_pro_ui_set_state(ECHOEAR_FACE_NORMAL_IDLE);
+    echoear_mock_api_load("mock/state.txt");
+    echoear_provisioning_mock_load(
+        "mock/provisioning.txt");
+
+    uint32_t api_tick = 0;
+
+    // echoear_app_state_init();
+    // echoear_mock_api_load("mock/state.txt");
+    // echoear_pro_ui_create();
+
+    // echoear_face_state_t preview_face = ECHOEAR_FACE_CAR_OBD_READY; /*อยากดูอะไรเปลี่ยนตรงนี้*/
+    // echoear_pro_ui_set_state(preview_face);
+
+    // uint32_t api_tick = 0;
+
+    while (1)
+    {
+        uint32_t sleep_time_ms = lv_timer_handler();
+
+        if (sleep_time_ms == LV_NO_TIMER_READY)
+        {
+            sleep_time_ms = LV_DEF_REFR_PERIOD;
+        }
+
+        api_tick += sleep_time_ms;
+
+        if (api_tick > 1000)
+        {
+            api_tick = 0;
+            echoear_mock_api_load("mock/state.txt");
+    echoear_provisioning_mock_load(
+        "mock/provisioning.txt");
+        }
+
 #ifdef _MSC_VER
-    Sleep(sleep_time_ms);
+        Sleep(sleep_time_ms);
 #else
-    usleep(sleep_time_ms * 1000);
+        usleep(sleep_time_ms * 1000);
 #endif
-  }
+    }
 
-  return 0;
+    return 0;
 }
 
-
 #endif
 
-/**********************
- *   STATIC FUNCTIONS
- **********************/
+/*ECHOEAR_FACE_NORMAL_IDLE,
+ECHOEAR_FACE_NORMAL_ANGRY,
+ECHOEAR_FACE_NORMAL_CONFUSED,
+ECHOEAR_FACE_NORMAL_HAPPY,
+ECHOEAR_FACE_NORMAL_LISTENING,
+ECHOEAR_FACE_NORMAL_SAD,
+ECHOEAR_FACE_NORMAL_SLEEPING,
+ECHOEAR_FACE_NORMAL_SPEAKING,
+ECHOEAR_FACE_NORMAL_SURPRISED,
+ECHOEAR_FACE_NORMAL_THINKING,
+ECHOEAR_FACE_NORMAL_WINK,
 
+ECHOEAR_FACE_SYSTEM_WIFI_SETUP,
+ECHOEAR_FACE_SYSTEM_OTA_UPDATING,
+ECHOEAR_FACE_SYSTEM_LOW_BATTERY,
+ECHOEAR_FACE_SYSTEM_ERROR,
+
+ECHOEAR_FACE_CAR_OBD_CONNECTING,
+ECHOEAR_FACE_CAR_OBD_READY,
+ECHOEAR_FACE_CAR_OBD_ERROR*/
