@@ -1,13 +1,15 @@
-﻿# EchoEar Pro Module 4B provisioning simulator
+# EchoEar Pro Module 4B provisioning runtime simulator
 
-provisioning_enabled=0
-provisioning_state=not_started
+# auto = use First Boot Detection result
+provisioning_enabled=auto
+provisioning_state=ap_ready
 provisioning_error=none
 
-setup_completed=1
+# auto = use persistent device_storage.txt value
+setup_completed=auto
 client_connected=0
 
-ap_ssid=
-target_ssid=Home-WiFi
-ip_address=192.168.1.120
-wifi_rssi=-48
+ap_ssid=EchoEar-A82F
+target_ssid=
+ip_address=192.168.4.1
+wifi_rssi=0

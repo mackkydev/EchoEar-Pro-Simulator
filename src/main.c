@@ -20,6 +20,8 @@
 #include "echoear_mock_api.h"
 #include "echoear_provisioning.h"
 #include "echoear_provisioning_mock.h"
+#include "echoear_first_boot.h"
+#include "echoear_first_boot_mock.h"
 
 #if LV_USE_OS != LV_OS_FREERTOS
 
@@ -35,6 +37,11 @@ int main(int argc, char **argv)
 
     echoear_app_state_init();
     echoear_provisioning_init();
+
+    echoear_first_boot_init();
+    echoear_first_boot_mock_load(
+        "mock/device_storage.txt");
+
     echoear_pro_ui_create();
 
     echoear_pro_ui_set_state(ECHOEAR_FACE_NORMAL_IDLE);

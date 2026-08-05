@@ -1,0 +1,6 @@
+# EchoEar Pro simulated persistent storage
+# Module 4B.2 First Boot Detection
+
+setup_completed=1
+wifi_credentials_saved=1
+force_provisioning=0
