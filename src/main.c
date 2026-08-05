@@ -22,6 +22,8 @@
 #include "echoear_provisioning_mock.h"
 #include "echoear_first_boot.h"
 #include "echoear_first_boot_mock.h"
+#include "echoear_softap.h"
+#include "echoear_softap_mock.h"
 
 #if LV_USE_OS != LV_OS_FREERTOS
 
@@ -37,6 +39,7 @@ int main(int argc, char **argv)
 
     echoear_app_state_init();
     echoear_provisioning_init();
+    echoear_softap_init();
 
     echoear_first_boot_init();
     echoear_first_boot_mock_load(
@@ -48,6 +51,9 @@ int main(int argc, char **argv)
     echoear_mock_api_load("mock/state.txt");
     echoear_provisioning_mock_load(
         "mock/provisioning.txt");
+
+    echoear_softap_mock_load(
+        "mock/softap.txt");
 
     uint32_t api_tick = 0;
 
@@ -77,6 +83,9 @@ int main(int argc, char **argv)
             echoear_mock_api_load("mock/state.txt");
     echoear_provisioning_mock_load(
         "mock/provisioning.txt");
+
+    echoear_softap_mock_load(
+        "mock/softap.txt");
         }
 
 #ifdef _MSC_VER

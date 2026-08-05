@@ -67,7 +67,14 @@ add_compile_definitions($<$<BOOL:${LV_USE_FFMPEG}>:LV_USE_FFMPEG=1>)
 
 # Add LVGL subdirectory
 add_subdirectory(lvgl)
-target_include_directories(lvgl PUBLIC ${PROJECT_SOURCE_DIR} ${SDL2_INCLUDE_DIRS})
+set(ECHOEAR_SDL2_INCLUDE_DIR
+    "D:/2026-Projects/EchoEar-Pro/tools/vcpkg/installed/x64-windows/include"
+)
+
+target_include_directories(lvgl PUBLIC
+    "$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>"
+    "$<BUILD_INTERFACE:${ECHOEAR_SDL2_INCLUDE_DIR}>"
+)
 
 set(MAIN_SOURCES src/mouse_cursor_icon.c src/hal/hal.c)
 set(MAIN_LIBS lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES})
@@ -149,8 +156,10 @@ target_sources(main PRIVATE
     ../src/echoear_pro_ui.c
     ../src/echoear_app_state.c
     ../src/echoear_first_boot.c
+    ../src/echoear_softap.c
     ../src/echoear_provisioning.c
     src/echoear_first_boot_mock.c
+    src/echoear_softap_mock.c
     ../src/echoear_provisioning_mock.c
     ../src/echoear_mock_api.c
 )

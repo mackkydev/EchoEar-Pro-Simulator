@@ -1,0 +1,23 @@
+# EchoEar Pro Module 4B.3 SoftAP simulator
+
+# auto = use First Boot Detection result
+softap_enabled=auto
+
+softap_state=portal_ready
+softap_error=none
+softap_auth=open
+
+ap_ssid=EchoEar-A82F
+ap_password=
+
+ap_ip=192.168.4.1
+ap_gateway=192.168.4.1
+ap_netmask=255.255.255.0
+ap_hostname=echoear.local
+
+ap_channel=1
+ap_max_clients=4
+ap_connected_clients=0
+
+dns_redirect_ready=1
+http_server_ready=1
