@@ -1,0 +1,25 @@
+﻿# EchoEar Pro Module 4B.4 Wi-Fi Scan + Connect simulator
+
+wifi_enabled=auto
+wifi_follow_portal=1
+
+wifi_state=scan_complete
+wifi_error=none
+wifi_scan_requested=0
+
+network=Home-WiFi|-42|wpa2_psk|1|AA:BB:CC:DD:EE:01|0
+network=Office-5G|-58|wpa2_wpa3|6|AA:BB:CC:DD:EE:02|0
+network=Guest-WiFi|-71|open|11|AA:BB:CC:DD:EE:03|0
+
+wifi_selected_ssid=
+wifi_selected_security=unknown
+
+# Never place a real Wi-Fi password in this file.
+wifi_password_present=0
+wifi_connect_requested=0
+
+wifi_connected_ssid=
+wifi_ip=
+wifi_gateway=
+wifi_netmask=
+wifi_connected_rssi=0

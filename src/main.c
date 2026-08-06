@@ -26,6 +26,8 @@
 #include "echoear_softap_mock.h"
 #include "echoear_captive_portal.h"
 #include "echoear_captive_portal_mock.h"
+#include "echoear_wifi_manager.h"
+#include "echoear_wifi_manager_mock.h"
 
 #if LV_USE_OS != LV_OS_FREERTOS
 
@@ -43,6 +45,7 @@ int main(int argc, char **argv)
     echoear_provisioning_init();
     echoear_softap_init();
     echoear_captive_portal_init();
+    echoear_wifi_manager_init();
 
     echoear_first_boot_init();
     echoear_first_boot_mock_load(
@@ -60,6 +63,9 @@ int main(int argc, char **argv)
 
     echoear_captive_portal_mock_load(
         "mock/captive_portal.txt");
+
+    echoear_wifi_manager_mock_load(
+        "mock/wifi_manager.txt");
 
     uint32_t api_tick = 0;
 
@@ -95,6 +101,9 @@ int main(int argc, char **argv)
 
     echoear_captive_portal_mock_load(
         "mock/captive_portal.txt");
+
+    echoear_wifi_manager_mock_load(
+        "mock/wifi_manager.txt");
         }
 
 #ifdef _MSC_VER
