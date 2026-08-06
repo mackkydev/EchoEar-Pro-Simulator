@@ -38,6 +38,27 @@ static char *trim_whitespace(char *value)
     return value;
 }
 
+static char *skip_utf8_bom(char *value)
+{
+    const unsigned char *bytes;
+
+    if (value == NULL || strlen(value) < 3U)
+    {
+        return value;
+    }
+
+    bytes = (const unsigned char *)value;
+
+    if (bytes[0] == 0xEFU &&
+        bytes[1] == 0xBBU &&
+        bytes[2] == 0xBFU)
+    {
+        return value + 3;
+    }
+
+    return value;
+}
+
 static bool parse_bool(const char *value)
 {
     if (value == NULL)
@@ -105,6 +126,7 @@ bool echoear_first_boot_mock_load(
         char *value;
 
         key = trim_whitespace(line);
+        key = skip_utf8_bom(key);
 
         if (key == NULL ||
             *key == '\0' ||
