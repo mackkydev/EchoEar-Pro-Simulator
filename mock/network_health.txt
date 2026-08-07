@@ -1,0 +1,6 @@
+# EchoEar Pro Module 4C.3B Network Health simulator
+network_health_enabled=1
+network_health_auto_tick=1
+network_health_now_ms=0
+network_health_result=internet_ready
+network_health_latency_ms=35
