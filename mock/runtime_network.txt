@@ -1,0 +1,16 @@
+# EchoEar Pro Module 4C.1B Runtime Network simulator
+
+runtime_network_enabled=1
+
+runtime_auto_boot=1
+runtime_boot_trigger=0
+
+runtime_auto_tick=1
+runtime_now_ms=0
+
+runtime_connect_result=success
+
+runtime_ip=192.168.1.88
+runtime_gateway=192.168.1.1
+runtime_netmask=255.255.255.0
+runtime_rssi=-45
