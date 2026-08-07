@@ -161,6 +161,8 @@ target_sources(main PRIVATE
     ../src/echoear_wifi_manager.c
     ../src/echoear_credentials_store.c
     ../src/echoear_reset_manager.c
+    ../src/echoear_provisioning_recovery.c
+    src/echoear_provisioning_recovery_mock.c
     src/echoear_reset_manager_mock.c
     ../src/echoear_provisioning.c
     src/echoear_first_boot_mock.c

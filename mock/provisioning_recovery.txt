@@ -1,0 +1,11 @@
+# EchoEar Pro Module 4B.7B Provisioning Recovery simulator
+
+recovery_enabled=1
+recovery_failure=none
+
+recovery_trigger=0
+
+recovery_auto_tick=1
+recovery_now_ms=0
+
+recovery_action_result=success
