@@ -1,0 +1,13 @@
+# EchoEar Pro Module 4B.6B Reset Integration simulator
+
+reset_action=none
+reset_source=settings
+reset_state=idle
+reset_error=none
+
+reset_request=0
+reset_confirm=0
+reset_cancel=0
+
+reset_auto_execute=1
+reset_execute_result=success

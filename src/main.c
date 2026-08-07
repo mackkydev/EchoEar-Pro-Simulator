@@ -30,6 +30,7 @@
 #include "echoear_wifi_manager_mock.h"
 #include "echoear_credentials_store.h"
 #include "echoear_credentials_store_mock.h"
+#include "echoear_reset_manager_mock.h"
 
 #if LV_USE_OS != LV_OS_FREERTOS
 
@@ -49,6 +50,7 @@ int main(int argc, char **argv)
     echoear_captive_portal_init();
     echoear_wifi_manager_init();
     echoear_credentials_store_init();
+    echoear_reset_manager_init();
 
     echoear_first_boot_init();
     echoear_first_boot_mock_load(
@@ -72,6 +74,9 @@ int main(int argc, char **argv)
 
     echoear_credentials_store_mock_load(
         "mock/credentials_store.txt",
+        "mock/device_storage.txt");
+    echoear_reset_manager_mock_load(
+        "mock/reset_manager.txt",
         "mock/device_storage.txt");
 
     uint32_t api_tick = 0;
@@ -114,6 +119,9 @@ int main(int argc, char **argv)
 
     echoear_credentials_store_mock_load(
         "mock/credentials_store.txt",
+        "mock/device_storage.txt");
+    echoear_reset_manager_mock_load(
+        "mock/reset_manager.txt",
         "mock/device_storage.txt");
         }
 
