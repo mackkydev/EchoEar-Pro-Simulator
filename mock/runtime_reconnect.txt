@@ -1,0 +1,7 @@
+# EchoEar Pro Module 4C.2B Runtime Reconnect simulator
+runtime_reconnect_enabled=1
+runtime_disconnect_trigger=0
+runtime_disconnect_reason=link_lost
+runtime_reconnect_auto_tick=1
+runtime_reconnect_now_ms=0
+runtime_reconnect_result=success

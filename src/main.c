@@ -33,6 +33,7 @@
 #include "echoear_reset_manager_mock.h"
 #include "echoear_provisioning_recovery_mock.h"
 #include "echoear_runtime_network_mock.h"
+#include "echoear_runtime_reconnect_mock.h"
 
 #if LV_USE_OS != LV_OS_FREERTOS
 
@@ -55,6 +56,7 @@ int main(int argc, char **argv)
     echoear_reset_manager_init();
     echoear_provisioning_recovery_init();
     echoear_runtime_network_init();
+    echoear_runtime_reconnect_init();
 
     echoear_first_boot_init();
     echoear_first_boot_mock_load(
@@ -87,6 +89,8 @@ int main(int argc, char **argv)
     echoear_runtime_network_mock_load(
         "mock/runtime_network.txt",
         "mock/device_storage.txt");
+    echoear_runtime_reconnect_mock_load(
+        "mock/runtime_reconnect.txt");
 
     uint32_t api_tick = 0;
 
@@ -137,6 +141,8 @@ int main(int argc, char **argv)
     echoear_runtime_network_mock_load(
         "mock/runtime_network.txt",
         "mock/device_storage.txt");
+    echoear_runtime_reconnect_mock_load(
+        "mock/runtime_reconnect.txt");
         }
 
 #ifdef _MSC_VER
