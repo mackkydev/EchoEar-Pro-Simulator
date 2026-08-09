@@ -36,6 +36,7 @@
 #include "echoear_runtime_reconnect_mock.h"
 #include "echoear_network_health_mock.h"
 #include "echoear_offline_mode_mock.h"
+#include "echoear_ai_provider_mock.h"
 
 #if LV_USE_OS != LV_OS_FREERTOS
 
@@ -61,6 +62,7 @@ int main(int argc, char **argv)
     echoear_runtime_reconnect_init();
     echoear_network_health_init();
     echoear_offline_mode_init();
+    echoear_ai_provider_init();
 
     echoear_first_boot_init();
     echoear_first_boot_mock_load(
@@ -99,6 +101,8 @@ int main(int argc, char **argv)
             "mock/network_health.txt");
         echoear_offline_mode_mock_load(
             "mock/offline_mode.txt");
+        echoear_ai_provider_mock_load(
+            "mock/ai_provider.txt");
 
     uint32_t api_tick = 0;
 
@@ -155,6 +159,8 @@ int main(int argc, char **argv)
             "mock/network_health.txt");
         echoear_offline_mode_mock_load(
             "mock/offline_mode.txt");
+        echoear_ai_provider_mock_load(
+            "mock/ai_provider.txt");
         }
 
 #ifdef _MSC_VER

@@ -1,0 +1,14 @@
+# EchoEar Pro Module 4D.1B AI Provider simulator
+ai_provider_enabled=1
+ai_provider_primary=openai
+ai_provider_fallback=gemini
+ai_provider_fallback_enabled=1
+ai_provider_use_gateway=1
+ai_provider_gateway_url=https://gateway.echoear.local/v1
+ai_provider_model=
+ai_provider_required=chat,tools
+ai_provider_request_trigger=0
+ai_provider_auto_tick=1
+ai_provider_now_ms=0
+ai_provider_primary_result=success
+ai_provider_fallback_result=success
