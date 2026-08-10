@@ -1,0 +1,12 @@
+# EchoEar Pro Module 4D.2B AI Gateway simulator
+ai_gateway_enabled=1
+ai_gateway_auto_connect=1
+ai_gateway_url=https://gateway.echoear.local/v1
+ai_gateway_device_id=echoear-sim-a82f
+ai_gateway_credential_ready=1
+ai_gateway_auto_tick=1
+ai_gateway_now_ms=0
+ai_gateway_connect_result=success
+ai_gateway_auth_result=success
+ai_gateway_connect_trigger=0
+ai_gateway_session_expire_trigger=0

@@ -171,6 +171,8 @@ target_sources(main PRIVATE
     src/echoear_offline_mode_mock.c
     ../src/echoear_ai_provider.c
     src/echoear_ai_provider_mock.c
+    ../src/echoear_ai_gateway.c
+    src/echoear_ai_gateway_mock.c
     src/echoear_runtime_reconnect_mock.c
     src/echoear_provisioning_recovery_mock.c
     src/echoear_reset_manager_mock.c
