@@ -1,0 +1,23 @@
+# EchoEar Pro Module 4D.3B Conversation simulator
+conversation_enabled=1
+conversation_auto_start_session=1
+conversation_locale=th-TH
+conversation_id=conv-sim-001
+conversation_request_timeout_ms=15000
+conversation_response_timeout_ms=60000
+
+conversation_auto_tick=1
+conversation_now_ms=0
+
+conversation_request_trigger=0
+conversation_request_id=req-001
+conversation_user_text=Hello EchoEar
+
+conversation_dispatch_result=success
+conversation_response_result=success
+conversation_response_text=Hello from EchoEar AI
+conversation_response_chunk_size=16
+
+conversation_cancel_trigger=0
+conversation_clear_trigger=0
+conversation_end_session_trigger=0
