@@ -168,7 +168,7 @@ target_sources(main PRIVATE
     ../src/echoear_network_health.c
     src/echoear_network_health_mock.c
     ../src/echoear_offline_mode.c
-    src/echoear_offline_mode_mock.c
+    src/echoear_offline_mode_mock.c
     ../src/echoear_ai_provider.c
     src/echoear_ai_provider_mock.c
     ../src/echoear_ai_gateway.c
@@ -251,3 +251,15 @@ target_include_directories(main PRIVATE
     "${CMAKE_CURRENT_LIST_DIR}/../src"
 )
 # ECHOEAR MODULE 4D.4B TOOL ROUTER END
+# ECHOEAR MODULE 4D.5B LIVE SEARCH BEGIN
+target_sources(main PRIVATE
+    "${CMAKE_CURRENT_LIST_DIR}/../src/echoear_live_search.c"
+    "${CMAKE_CURRENT_LIST_DIR}/../src/echoear_search_bridge.c"
+    "${CMAKE_CURRENT_LIST_DIR}/src/echoear_live_search_mock.c"
+    "${CMAKE_CURRENT_LIST_DIR}/src/echoear_search_bridge_mock.c"
+)
+
+target_include_directories(main PRIVATE
+    "${CMAKE_CURRENT_LIST_DIR}/../src"
+)
+# ECHOEAR MODULE 4D.5B LIVE SEARCH END

@@ -1,0 +1,30 @@
+# EchoEar Pro Module 4D.5B Live Search simulator
+live_search_enabled=1
+live_search_network_ready=1
+live_search_gateway_ready=1
+
+live_search_auto_tick=1
+live_search_now_ms=0
+live_search_max_results=4
+
+live_search_request_trigger=0
+live_search_request_id=search-001
+live_search_type=web
+live_search_query=EchoEar Pro
+
+live_search_dispatch_result=success
+live_search_response_result=success
+
+live_search_result1_title=EchoEar Pro Search Result
+live_search_result1_url=https://example.local/echoear
+live_search_result1_snippet=Deterministic simulator result for EchoEar Pro.
+live_search_result1_source=simulator
+
+live_search_result2_title=EchoEar Pro Documentation
+live_search_result2_url=https://example.local/docs
+live_search_result2_snippet=Second deterministic simulator result.
+live_search_result2_source=simulator
+
+live_search_stale_result_trigger=0
+live_search_clear_trigger=0
+live_search_cancel_trigger=0
