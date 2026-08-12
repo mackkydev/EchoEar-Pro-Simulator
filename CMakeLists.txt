@@ -241,3 +241,13 @@ else()
     message(STATUS "AddressSanitizer disabled")
 endif()
 endif()
+# ECHOEAR MODULE 4D.4B TOOL ROUTER BEGIN
+target_sources(main PRIVATE
+    "${CMAKE_CURRENT_LIST_DIR}/../src/echoear_tool_router.c"
+    "${CMAKE_CURRENT_LIST_DIR}/src/echoear_tool_router_mock.c"
+)
+
+target_include_directories(main PRIVATE
+    "${CMAKE_CURRENT_LIST_DIR}/../src"
+)
+# ECHOEAR MODULE 4D.4B TOOL ROUTER END

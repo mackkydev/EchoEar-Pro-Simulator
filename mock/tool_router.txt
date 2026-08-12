@@ -1,0 +1,16 @@
+# EchoEar Pro Module 4D.4B Tool Router simulator
+tool_router_enabled=1
+tool_router_network_ready=1
+
+tool_router_request_trigger=0
+tool_router_call_id=call-001
+tool_router_request_id=req-001
+tool_router_tool_name=obd.read_speed
+tool_router_arguments={}
+
+tool_router_confirmation_result=none
+tool_router_execution_result=success
+tool_router_execution_output={"speed_kph":88}
+
+tool_router_cancel_trigger=0
+tool_router_clear_trigger=0

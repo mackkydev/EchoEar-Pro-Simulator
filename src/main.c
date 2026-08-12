@@ -40,6 +40,7 @@
 #include "echoear_ai_gateway_mock.h"
 #include "echoear_conversation_mock.h"
 
+#include "echoear_tool_router_mock.h"
 #if LV_USE_OS != LV_OS_FREERTOS
 
 int main(int argc, char **argv)
@@ -69,6 +70,7 @@ int main(int argc, char **argv)
     echoear_ai_gateway_mock_init();
     echoear_conversation_mock_init();
 
+    echoear_tool_router_mock_init();
     echoear_first_boot_init();
     echoear_first_boot_mock_load(
         "mock/device_storage.txt");
@@ -111,6 +113,7 @@ int main(int argc, char **argv)
         echoear_ai_gateway_mock_load("mock/ai_gateway.txt");
         echoear_conversation_mock_load("mock/conversation.txt");
 
+    echoear_tool_router_mock_load("mock/tool_router.txt");
     uint32_t api_tick = 0;
 
     // echoear_app_state_init();
@@ -170,6 +173,7 @@ int main(int argc, char **argv)
             "mock/ai_provider.txt");
         echoear_ai_gateway_mock_load("mock/ai_gateway.txt");
         echoear_conversation_mock_load("mock/conversation.txt");
+    echoear_tool_router_mock_load("mock/tool_router.txt");
         }
 
 #ifdef _MSC_VER
